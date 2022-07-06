@@ -1,0 +1,295 @@
+@charset "UTF-8";
+@font-face {
+    font-family: "HKGrotesk";
+    src: url(../fonts/HKGrotesk-Medium.otf) format('opentype');
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* outline: 2px solid rgb(77, 255, 77); */
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    font-family: "HK Grotesk",sans-serif;
+}
+
+section{
+    background-image: url('../images/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+}
+
+p{
+    width: min(100% - 1.5em, 600px);
+    font-size: 1.1em;
+    line-height: 1.2em;
+}
+
+div.navMenu{
+    display: none;
+}
+
+section#home, section#sobre, #servicos{
+    /* display:none; */
+}
+
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+header div.logo{
+}
+
+.logo img{
+    width: 100px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap:2em;
+}
+
+nav a{
+    text-decoration: none;
+    padding: .5em 3em;
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+}
+
+div.home, div.imagem, div.content, div.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.content{
+    margin: 1.5em auto;
+    width: 100%;
+    height: 100%;
+}
+
+div.home{
+    flex-direction: column;
+    height: 100%;
+}
+
+div.imagem{
+    width: 30%;
+}
+
+div.imagem img{
+    max-width: 100%;
+}
+
+#home div.text{
+    width: 60%;
+}
+
+#home div.text p{
+    font-size: 1.5em;
+}
+
+/* SOBRE */
+
+#sobre .content{
+    height: 100%;
+}
+
+#sobre div.text{
+    flex-direction: column;
+    gap: 1em;
+    width: 70%;
+}
+
+#sobre div.imagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 45%;
+}
+
+#sobre div.imagem img{
+    width: 100%;
+}
+
+/* SECTION SERVIÇOS */
+
+section#servicos{}
+
+#servicos .content{
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+}
+
+#servicos .content h1{
+    text-align: center;
+    font-size: 2em;
+}
+
+.servItems{
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+    display: flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    gap: 1em;
+}
+
+.item{
+    display:grid;
+    grid-template-rows: repeat(4,auto);
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    border: 1px solid rgb(192, 185, 185);
+    padding: .5em;
+    gap:1em;
+    /* height: 100%; */
+}
+
+.item h3{
+    text-align: center;
+    padding: .5em;
+    background-color: rgba(138, 138, 247, 0.363);
+    border: 2px solid #f7f7f7;
+}
+
+.item ul{
+    padding-left: .8em;
+    line-height: 1.5em;
+    
+}
+
+.item .img{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item img{
+    max-width: 60%;
+}
+
+.item .venda{
+    display: grid;
+    gap: .5em;
+}   
+.item .double{
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.item .venda p{
+    width: 100%;
+    text-align: center;
+    font-size: .8em;
+}
+
+.item span{
+    padding: .5em;
+    background-color: rgba(138, 138, 247, 0.363);
+    text-align: center;
+}
+
+.item .double span{
+    grid-row: 2;
+} 
+
+.item .venda a{
+    text-decoration: none;
+    padding: .9em;
+    background-color: red;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* SECTION CONTATO */
+
+#contato .content{
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#contato .text{
+    display:flex;
+}
+
+form input{
+    width: 100%;
+    line-height: 1.5em;
+}
+
+form textarea{
+    width: 100%;
+}
+
+#contato form{
+    display: grid;
+    gap:1em;
+    width: 60%;
+}
+
+footer{
+    background-color: #000000;
+    color:white;
+    height: 40px;
+}
+
+@media (max-width:667px){
+    section{
+        height: fit-content;
+        width: 100%;
+        padding-top: .8em;
+    }
+
+    section#sobre div.content{
+        flex-direction: column-reverse;
+    }
+
+    div.servItems{
+        display: flex;
+        flex-direction: column;
+        margin: 1em auto;
+    }
+
+    div.imagem, #sobre div.imagem{
+        width: 90%;
+    }
+
+    div.content, #contato .text{
+        flex-direction: column;
+    }
+
+    #sobre div.text, #home div.text, div.text, #contato div.text{
+        width: 100%;
+        padding: 1em 0;
+    }
+
+    nav{
+        display: none;
+    }
+}
